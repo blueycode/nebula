@@ -1,6 +1,23 @@
 const password = document.querySelector("#password");
 const form = document.querySelector("form");
 
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (checkPassword() < 5) {
+        return Toastify({
+            text: "Error: Insecure password. Please choose a stronger password.",
+            className: "warning"
+        }).showToast();
+    }
+
+    return Toastify({
+        text: "Thank you! The form has been sent.",
+        className: "success"
+    }).showToast();
+    // Lastly, let's make each toast have it's own color (red/green)
+});
+
 function updateInnerBar(level) {
     const passMeter = document.querySelector("#pass-meter");
     const meterOuter = document.querySelector("#meter-outer");
@@ -28,9 +45,6 @@ One special character.`;
     meterOuter.style.border = "1px solid #E0E2E9";
     meterInner.style.width = level + "%";
 
-    // We'll update the bar under 3 circumstances:
-    // level < 40, level between 40 and 80
-    // and when level = 100
     if (level <= 40) {
         meterInner.style.backgroundColor = "#d98181";
         pwdDesc.innerText = "Your password is weak";

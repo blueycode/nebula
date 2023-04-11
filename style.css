@@ -164,6 +164,14 @@ body {
     color: #969AB8;
 }
 
+.warning {
+    background: #e93535 !important;
+}
+
+.success {
+    background: #7eac7e !important;
+}
+
 @media only screen and (max-width: 1024px) {
     #left {
         width: 50%;
