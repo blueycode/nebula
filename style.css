@@ -163,3 +163,33 @@ body {
     text-align: center;
     color: #969AB8;
 }
+
+@media only screen and (max-width: 1024px) {
+    #left {
+        width: 50%;
+        padding: 0 2rem;
+    }
+
+    #right {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #left {
+        width: 100%;
+    }
+
+    #right {
+        display: none;
+    }
+
+    #left .logo {
+        justify-content: center;
+        font-size: 2rem;
+    }
+
+    #left .logo img {
+        height: 3rem;
+    }
+}
